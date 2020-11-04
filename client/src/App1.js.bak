@@ -1,0 +1,31 @@
+import { Card, DatePicker, Space } from 'antd';
+import Meta from 'antd/lib/card/Meta';
+import './App.scss';
+
+function App() {
+  const onChange = (date, dateString) => {
+    console.log(date, dateString);
+  }
+  return (
+    <div className="App">
+      <h1>Web Personal <span>Juan Carlos</span></h1>
+      <h2>Proyecto</h2>
+      <Space direction="vertical">
+         <DatePicker onChange={onChange} />
+        <DatePicker onChange={onChange} picker="week" />
+        <DatePicker onChange={onChange} picker="month" />
+        <DatePicker onChange={onChange} picker="quarter" />
+        <DatePicker onChange={onChange} picker="year" />
+      </Space>
+      <Card
+        hoverable
+        style={{ width: 240 }}
+        cover={<img alt="example" src="https://img.freepik.com/foto-gratis/pizarra-vacia_53876-30426.jpg?size=626&ext=jpg" />}
+      >
+        <Meta title="Europe Street beat" description="www.instagram.com" />
+      </Card>
+    </div>
+  );
+}
+
+export default App;
